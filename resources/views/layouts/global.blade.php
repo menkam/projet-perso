@@ -29,8 +29,7 @@
      
   </head>
   
-@if(\Auth::user()->hasRole('admin') || \Auth::user()->hasRole('enseignant') || \Auth::user()->hasRole('etudiant') || \Auth::user()->hasRole('visiteur'))
-  <body class="nav-md">
+<body class="nav-md">
     <div class="container body">
         <div class="main_container">
             <div class="col-md-3 left_col menu_fixed">
@@ -39,21 +38,21 @@
                         <a href=" {{ url('home') }} " class="site_title"><i class="fa"><small>PFE</small></i> <span>LIR-2017</span></a>
                     </div>
                     <div class="clearfix"></div>
-                    <!-- menu profile quick info -->
+                    <!-- menu profile quick info --
                     @include('partials.info_profil')
                     <!-- /menu profile quick info -->
                     <br />
-                    <!-- sidebar menu -->
+                    <!-- sidebar menu --
                     @include('partials.menu')
                     <!-- /sidebar menu -->
 
-                    <!-- /menu footer buttons -->
+                    <!-- /menu footer buttons --
                     @include('partials.menu_footer')
                     <!-- /menu footer buttons -->
                 </div>
             </div>
 
-            <!-- top navigation -->
+            <!-- top navigation --
             <div class="top_nav">
                 <div class="nav_menu">
                     <nav>
@@ -102,61 +101,7 @@
     <!--script src="{{ asset('js/compose.js') }}"></script-->
 
     <script type="text/javascript">
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        // Variable de reccupération de la date et l'heure courande du serveur
-        //var dateCourante = "2018-07-18";
-
-        var dateCourante = "<?php
-            $date = getDate();
-            if((int)$date["mon"] < 10 && (int)$date["mday"] < 10){
-                echo $date["year"]."-0".$date["mon"]."-0".$date["mday"];
-            }
-            if((int)$date["mon"] < 10 && (int)$date["mday"] >= 10){
-                echo $date["year"]."-0".$date["mon"]."-".$date["mday"];
-            }
-            if((int)$date["mon"] >= 10 && (int)$date["mday"] < 10){
-                echo $date["year"]."-".$date["mon"]."-0".$date["mday"];
-            }
-            if((int)$date["mon"] >= 10 && (int)$date["mday"] >= 10){
-                echo $date["year"]."-".$date["mon"]."-".$date["mday"];
-            }
-        ?>";
-         var heureCourante2 = '<?php
-            $heure = getDate();
-            if(((int)$heure["hours"]+1) < 10 && (int)$heure["minutes"] < 10){
-                echo "0".($heure["hours"]+1)."H0".$heure["minutes"];
-            }
-            if(((int)$heure["hours"]+1) < 10 && (int)$heure["minutes"] > 10){
-                echo "0".($heure["hours"]+1)."H".$heure["minutes"];
-            }
-            if(((int)$heure["hours"]+1) >= 10 && (int)$heure["minutes"] < 10){
-                echo ($heure["hours"]+1)."H0".$heure["minutes"];
-            }
-            if(((int)$heure["hours"]+1) >= 10 && (int)$heure["minutes"] > 10){
-                echo ($heure["hours"]+1)."H".$heure["minutes"];
-            }
-            //echo $heure["hours"]."h".$heure["minutes"].":".$heure["seconds"];
-        ?>';
-
-        //var heureCourante = '08H';
         
-        var heureCourante = '<?php
-            $heure = getDate();
-            if(($heure["hours"]+1) < 10){
-                echo "0".($heure["hours"]+1)."H";
-            }else {
-                echo ($heure["hours"]+1)."H";
-            }
-        ?>';
-        //alert(dateCourante+" "+heureCourante);
-
-        
-        var iduser = "<?php echo Auth::user()->id; ?>";
-        var idUser = "<?php echo Auth::user()->id; ?>";
     </script>
 
     <script src="{{ asset('js/scripts.js') }}"></script>
@@ -166,27 +111,6 @@
     
     @yield('scripts')
     </body>
-@else
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col col-md-10 col-md-offset-1">
-                    <div class="alert alert-warning" style="text-align: center; margin-top: 20%">
-                        <h2>ACERFI SIGES</h2><br/>
-                        <i class="fa fa-warning" style="font-size: 6em"></i><br/>
-                        <h3>Votre Compte a ete Desactiver!!!!</h3><br/>
-                        <h4>Veiller contacter l admin ===> <a href="www.github/menkam.com">men_franc</a></h4><br/>
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-btn fa-sign-out"></i> Logout</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-@endif
 </html>
 
 

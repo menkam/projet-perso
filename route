@@ -1,0 +1,48 @@
++--------+----------+--------------------------------+--------------------------------+------------------------------------------------------------------------+--------------+
+| Domain | Method   | URI                            | Name                           | Action                                                                 | Middleware   |
++--------+----------+--------------------------------+--------------------------------+------------------------------------------------------------------------+--------------+
+|        | GET|HEAD | /                              |                                | Closure                                                                | web,guest    |
+|        | GET|HEAD | androidAModifierMembreGroupe   | androidAModifierMembreGroupe   | App\Http\Controllers\AndroidApi\GroupeController@modifierMembre        | web          |
+|        | GET|HEAD | androidAjouterMembreContact    | androidAjouterMembreContact    | App\Http\Controllers\AndroidApi\ContactController@ajouterMembre        | web          |
+|        | GET|HEAD | androidAjouterMembreGroupe     | androidAjouterMembreGroupe     | App\Http\Controllers\AndroidApi\GroupeController@ajouerMembre          | web          |
+|        | GET|HEAD | androidAjouterVille            | androidAjouterVille            | App\Http\Controllers\AndroidApi\VilleController@ajouter                | web          |
+|        | GET|HEAD | androidCreerForum              | androidCreerForum              | App\Http\Controllers\AndroidApi\ForumController@creer                  | web          |
+|        | GET|HEAD | androidCreerGroupe             | androidCreerGroupe             | App\Http\Controllers\AndroidApi\GroupeController@creerGroupe           | web          |
+|        | GET|HEAD | androidCreerTchat              | androidCreerTchat              | App\Http\Controllers\AndroidApi\TchatController@creer                  | web          |
+|        | GET|HEAD | androidGetAjouterContinent     | androidGetAjouterContinent     | App\Http\Controllers\AndroidApi\ContinentController@ajouter            | web          |
+|        | GET|HEAD | androidGetAjouterDepartement   | androidGetAjouterDepartement   | App\Http\Controllers\AndroidApi\DepartementController@ajouter          | web          |
+|        | GET|HEAD | androidGetAjouterPays          | androidGetAjouterPays          | App\Http\Controllers\AndroidApi\RegionController@ajouter               | web          |
+|        | GET|HEAD | androidGetAjouterRegion        | androidGetAjouterRegion        | App\Http\Controllers\AndroidApi\RegionController@ajouter               | web          |
+|        | GET|HEAD | androidGetListerContinent      | androidGetListerContinent      | App\Http\Controllers\AndroidApi\ContinentController@lister             | web          |
+|        | GET|HEAD | androidGetListerDepartement    | androidGetListerDepartement    | App\Http\Controllers\AndroidApi\DepartementController@lister           | web          |
+|        | GET|HEAD | androidGetListerPays           | androidGetListerPays           | App\Http\Controllers\AndroidApi\RegionController@lister                | web          |
+|        | GET|HEAD | androidGetListerRegion         | androidGetListerRegion         | App\Http\Controllers\AndroidApi\RegionController@lister                | web          |
+|        | GET|HEAD | androidGetListerVille          | androidGetListerVille          | App\Http\Controllers\AndroidApi\VilleController@lister                 | web          |
+|        | GET|HEAD | androidGetSupprimerContinent   | androidGetSupprimerContinent   | App\Http\Controllers\AndroidApi\ContinentController@suprimer           | web          |
+|        | GET|HEAD | androidGetSupprimerDepartement | androidGetSupprimerDepartement | App\Http\Controllers\AndroidApi\DepartementController@suprimer         | web          |
+|        | GET|HEAD | androidGetSupprimerRegion      | androidGetSupprimerRegion      | App\Http\Controllers\AndroidApi\RegionController@suprimer              | web          |
+|        | GET|HEAD | androidLogin                   | androidLogin                   | App\Http\Controllers\AndroidApi\AuthController@login                   | web          |
+|        | GET|HEAD | androidModifierCompte          | androidModifierCompte          | App\Http\Controllers\AndroidApi\AuthController@modifierCompte          | web          |
+|        | GET|HEAD | androidModifierContact         | androidModifierContact         | App\Http\Controllers\AndroidApi\ContactController@modifierContact      | web          |
+|        | GET|HEAD | androidModifierForum           | androidModifierForum           | App\Http\Controllers\AndroidApi\ForumController@modifier               | web          |
+|        | GET|HEAD | androidModifierGroupe          | androidModifierGroupe          | App\Http\Controllers\AndroidApi\GroupeController@modifierGroupe        | web          |
+|        | GET|HEAD | androidModifierMembreContact   | androidModifierMembreContact   | App\Http\Controllers\AndroidApi\ContactController@modifierMembre       | web          |
+|        | GET|HEAD | androidModifierTchat           | androidModifierTchat           | App\Http\Controllers\AndroidApi\TchatController@modifier               | web          |
+|        | GET|HEAD | androidRegister                | androidRegister                | App\Http\Controllers\AndroidApi\AuthController@register                | web          |
+|        | GET|HEAD | androidResetPassword           | androidResetPassword           | App\Http\Controllers\AndroidApi\AuthController@resetPassword           | web          |
+|        | GET|HEAD | androidSupprimerPays           | androidSupprimerPays           | App\Http\Controllers\AndroidApi\RegionController@suprimer              | web          |
+|        | GET|HEAD | androidSupprimerVille          | androidSupprimerVille          | App\Http\Controllers\AndroidApi\VilleController@suprimer               | web          |
+|        | GET|HEAD | androidVerifierPassword        | androidVerifierPassword        | App\Http\Controllers\AndroidApi\AuthController@verifierPassword        | web          |
+|        | GET|HEAD | androidVerifierTelephone       | androidVerifierTelephone       | App\Http\Controllers\AndroidApi\AuthController@verifierTelephone       | web          |
+|        | GET|HEAD | api/user                       |                                | Closure                                                                | api,auth:api |
+|        | GET|HEAD | home                           |                                | Closure                                                                | web,auth     |
+|        | POST     | login                          |                                | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+|        | GET|HEAD | login                          | login                          | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST     | logout                         | logout                         | App\Http\Controllers\Auth\LoginController@logout                       | web          |
+|        | POST     | password/email                 | password.email                 | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest    |
+|        | POST     | password/reset                 |                                | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest    |
+|        | GET|HEAD | password/reset                 | password.request               | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest    |
+|        | GET|HEAD | password/reset/{token}         | password.reset                 | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest    |
+|        | POST     | register                       |                                | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
+|        | GET|HEAD | register                       | register                       | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
++--------+----------+--------------------------------+--------------------------------+------------------------------------------------------------------------+--------------+
